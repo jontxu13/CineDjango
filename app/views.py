@@ -127,7 +127,7 @@ def voto(request):
 
 def new_pelicula(request):
     if request.method == "POST":
-        form = PeliculaForm(request.POST)
+        form = PeliculaForm(request.POST, request.FILES)
         if form.is_valid():
             pelicula = form.save(commit=False)
             pelicula.save()
